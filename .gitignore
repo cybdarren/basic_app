@@ -1,0 +1,75 @@
+# ------------------------------------------------------------
+# .gitignore for an MPLAB (VS Code) + MCC Harmony bare-metal project
+# Keeps: sources, MCC config (.mc3, harmony.prj, manifests),
+#        MCC-generated code in src/config/, project + CMake user files
+# Drops: build output, generated CMake, IDE/OS clutter
+# ------------------------------------------------------------
+
+# --- Build output (MPLAB VS Code / CMake) ---
+_build/
+build/
+out/
+dist/
+cmake/**/.generated/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+compile_commands.json
+
+# --- Compiler / linker artifacts (anywhere) ---
+*.o
+*.obj
+*.d
+*.a
+*.elf
+*.hex
+*.bin
+*.map
+*.lst
+*.i
+*.s.o
+*.cof
+
+# --- MCC caches and backups (config files themselves are kept) ---
+.generated_files/
+*.mc3.bak
+*.bak
+src/config/**/*.orig
+
+# --- VS Code: keep shared project settings, drop personal state ---
+.vscode/*
+!.vscode/*.mplab.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.vscode/.browse.*
+*.code-workspace.local
+
+# --- MPLAB X leftovers (if the project is ever opened there) ---
+nbproject/private/
+nbproject/Makefile-*
+nbproject/Package-*
+*.X/build/
+*.X/dist/
+*.X/debug/
+
+# --- Debugger / tool logs ---
+*.log
+MPLABXLog.xml*
+debug/
+
+# --- OS / editor clutter ---
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*~
+
+nbproject/
+Makefile*
+Package-*
+private/
+!cmake/**/user.cmake
+cmake/**/.generated/*
+cmake/**/CMake*

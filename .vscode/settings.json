@@ -1,0 +1,9 @@
+{
+    "mplab.clangd.compileCommandsDir": "${workspaceFolder}/_build/same54_blinky/default",
+    "mplab.clangd.arguments": [
+        "--header-insertion=never"
+    ],
+    "mplab.clangd.path": "c:\\Program Files\\Microchip\\xc32\\v6.00\\bin\\xc32-clangd.exe",
+    "C_Cpp.intelliSenseEngine": "disabled",
+    "cmake.sourceDirectory": "C:/Microchip/Here_Be_Dragons/Basic_App/cmake/same54_blinky/default"
+}
