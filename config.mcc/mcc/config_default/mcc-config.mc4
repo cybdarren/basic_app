@@ -49,8 +49,6 @@ generatedFileHashHistoryMap:
   hash: cb6824c3914263acc3cf64bb8a8f7e14d050d9224a788422935b555d0da8d0d7
 - file: ..\src\config\default\startup_xc32.c
   hash: 2916a631dd72c23f29daf3ec7ebc84abec03a29948825df0b1505d670d73fe50
-- file: ..\src\config\default\stdio\xc32_monitor.c
-  hash: 858f8710d4287200a5ee7f3b3ad7c24f505aed9c05c16956ab0ff9f7bb162a6a
 - file: ..\src\config\default\toolchain_specifics.h
   hash: 6fc0551b0fa3362678b3d7a227386fafa343140d31e4da3ad4af972e61cd0acb
 - file: ..\src\packs\ATSAME54P20A_DFP\component\ac.h
