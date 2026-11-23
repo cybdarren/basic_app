@@ -36,7 +36,8 @@
             "type": "toolchain",
             "provider": "microchip.toolchains:xc32@6.00",
             "properties": {
-                "linker.heap-size": "512",
+                "linker.heap-size": "16384",
+                "compiler.additional-options": "-fcommon",
                 "compiler.extra-include-directories": [
                     "config.mcc/src",
                     "config.mcc/src/config/default",
