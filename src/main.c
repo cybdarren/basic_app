@@ -30,6 +30,8 @@ int main(void)
 
     uart_init();
 
+    (void)write(STDOUT_FILENO_, "Program Started\r\n", 17u);
+
     PORT_REGS->GROUP[BLINK_GROUP].PORT_OUTSET = BLINK_MASK;  /* LED off (active low) */
     PORT_REGS->GROUP[BLINK_GROUP].PORT_DIRSET = BLINK_MASK;  /* output */
 
