@@ -65,7 +65,10 @@
         {
             "name": "default-tool-base",
             "type": "tool",
-            "properties": {}
+            "properties": {
+                "programoptions.smart.program": "Never",
+                "programoptions.eraseb4program": "true"
+            }
         },
         {
             "name": "default-debug",

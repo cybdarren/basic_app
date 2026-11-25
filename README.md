@@ -46,6 +46,22 @@ A software disable in firmware cannot help once the running peripheral has
 loaded ALWAYSON from an erased page: ALWAYSON is read-only-locked until a POR
 reloads the (now disabled) fuse. So the fix is fuse + power-cycle, not code.
 
+### Make sure you are actually programming the hardware
+
+- **Tool must be `EDBG`, not `Simulator`.** `.vscode/same54_blinky.mplab.json`
+  sets `"tool": "EDBG"`. If it is set to `Simulator`, builds/downloads never
+  touch the real device and the watchdog on the board is unaffected.
+- **Full program, every time.** `default-tool-base` sets
+  `programoptions.smart.program = "Never"` (no incremental/"smart" programming)
+  and `programoptions.eraseb4program = "true"` (erase-all before program) so the
+  whole image — including the User Page region at `0x00804000` — is written on
+  each download rather than diffed and skipped.
+- If an EDBG download *still* does not clear the 32 s reset, the User Page is not
+  being written by this flow. Program it once with **MPLAB IPE** (load
+  `out/same54_blinky/default.hex`, Program) or OpenOCD's `atsame5 userpage`, then
+  do the power-cycle below. The User-Page bytes are already correct in the hex:
+  `0x00804004` = `0x2AA80080` (WDT_ENABLE=0, ALWAYSON=0).
+
 ## Project Structure
 
 - 📦 `_build` — The [CMake build tree](https://cmake.org/cmake/help/latest/manual/cmake.1.html#introduction-to-cmake-buildsystems); safe to delete, regenerated on next build.
